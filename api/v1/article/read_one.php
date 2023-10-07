@@ -24,7 +24,7 @@ if(!$pdo) {
 }
 
 
-$stmt = $pdo->prepare("SELECT * FROM article WHERE id=:id");
+$stmt = $pdo->prepare("SELECT * FROM article a, category c WHERE a.idTheme = c.id AND a.id=:id");
 
 $stmt->bindParam (':id', $articleid, PDO::PARAM_INT);
 

@@ -24,7 +24,7 @@ if(!$pdo) {
 }
 
 try {
-  $stmt = $pdo->query('SELECT * FROM article');
+  $stmt = $pdo->query('SELECT * FROM article a, category c WHERE a.idTheme = c.id');
 } catch(PDOException $err) {
   sendHeaders('GET');
   header("HTTP/1.0 500 Error");
