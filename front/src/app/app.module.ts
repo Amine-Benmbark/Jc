@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
@@ -15,6 +17,7 @@ import { OurServicesComponent } from './components/our-services/our-services.com
 import { CountersComponent } from './components/counters/counters.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -30,11 +33,15 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
     OurServicesComponent,
     CountersComponent,
     AboutUsComponent,
-    TestimonialsComponent
+    TestimonialsComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    CarouselModule,
+    BrowserAnimationsModule ,
   ],
   providers: [],
   bootstrap: [AppComponent]
